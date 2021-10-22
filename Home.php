@@ -17,20 +17,27 @@ if($_SESSION['counter']==0){
 		header("Location: F_Loginerror.php");
     } 
     header('Cache-Control: no cache'); 
+
     $_SESSION['user'] = $_POST["username"];
     $_SESSION['pass'] = $_POST["password"];
     $row=mysqli_fetch_assoc($result);
     $_SESSION['type'] = $row['type'];
 }
 ?>
-    <?php
-    if($_SESSION['type']=="QA"){
-        echo '<li><a href="create_post.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Create Post</a></li>';
-    }
-    if($_SESSION['type']=="ADM"){
-        echo '<li><a href="check_users.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Check Users</a></li>';
-    }
-    ?>
+<!-- Navbar -->
+<!-- <header class="header">
+<h1 class="logo"><a href="#">Bug Tracker</a></h1>
+  <ul class="main-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="logout.php">Logout</a></li>
+      <?php
+      if($_SESSION['type']=="QA"){
+          echo '<li><a href="create_post.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Create Post</a></li>';
+      }
+      if($_SESSION['type']=="ADM"){
+          echo '<li><a href="check_users.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Check Users</a></li>';
+      }
+      ?>
   </ul> -->
 
 <nav class="navbar">
