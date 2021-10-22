@@ -9,7 +9,7 @@
     <script defer src="script.js"></script>
 </head>
 
-<body>
+<body class="main">
   <?php
   include "connect.php";
   session_start();
